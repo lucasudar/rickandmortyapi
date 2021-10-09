@@ -3,7 +3,7 @@
     <Pagination
         v-model="page"
         :maxPage="pages"
-        update="page"
+        :update="changePage"
     />
   </div>
 </template>
@@ -18,13 +18,27 @@ export default {
   },
   data() {
     return {
-      page: 1
+      page: this.$store.getters.page
     }
+  },
+  watch: {
+    page() {
+      return this.$store.commit("updatePage", {
+        value: this.page
+      })
+    }
+  },
+  methods: {
   },
   // computed: mapGetters(["pages"])
   computed: {
     pages() {
       return this.$store.getters.pages
+    },
+    changePage() {
+      return this.$store.dispatch("fetchHeroes", {
+        value: this.$store.getters.page
+      })
     }
   }
 }

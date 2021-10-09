@@ -17,7 +17,9 @@ import {mapGetters, mapActions} from "vuex"
 
 export default {
   async mounted() {
-    await this.$store.dispatch("fetchHeroes")
+    await this.$store.dispatch("fetchHeroes", {
+      value: this.$store.getters.page
+    })
   },
   methods: mapActions(["fetchHeroes"]),
   computed: mapGetters(["allHeroes"])
