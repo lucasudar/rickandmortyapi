@@ -7,7 +7,7 @@ export default {
 
             ctx.commit("updateHeroes", heroes)
             ctx.commit("updatePages", heroes)
-        }
+        },
     },
     mutations: {
         updateHeroes(state, heroes) {
@@ -15,7 +15,7 @@ export default {
         },
         updatePages(state, heroes) {
             state.pages = heroes.info.pages
-        }
+        },
     },
     state: {
         heroes: [],
@@ -27,6 +27,6 @@ export default {
         },
         pages(state) {
             return state.pages
-        }
+        },
     }
 }

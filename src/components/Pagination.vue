@@ -10,7 +10,7 @@
 
 <script>
 import Pagination from "@2alheure/vue-pagination";
-import {mapGetters} from "vuex"
+// import {mapGetters} from "vuex"
 
 export default {
   components: {
@@ -21,7 +21,12 @@ export default {
       page: 1
     }
   },
-  computed: mapGetters(["pages"])
+  // computed: mapGetters(["pages"])
+  computed: {
+    pages() {
+      return this.$store.getters.pages
+    }
+  }
 }
 </script>
 
