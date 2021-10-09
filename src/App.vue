@@ -1,12 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <Heroes/>
-  <Pagination
-      :totalPages="10"
-      :perPage="10"
-      :currentPage="currentPage"
-      @pagechanged="onPageChange"
-  />
+  <Pagination/>
 </template>
 
 <script>
@@ -15,18 +10,11 @@ import Pagination from "./components/Pagination";
 
 export default {
   name: 'App',
-  components: { Heroes, Pagination },
-  data () {
-    return {
-      currentPage: 1,
-    };
+  components: {Heroes, Pagination},
+  data() {
+    return {}
   },
-  methods: {
-    onPageChange(page) {
-      console.log(page)
-      this.currentPage = page;
-    }
-  }
+  methods: {}
 }
 </script>
 
@@ -38,6 +26,7 @@ export default {
   text-align: center;
   margin-top: 60px;
 }
+
 img {
   width: 150px;
   height: 100%;

@@ -17,10 +17,10 @@ import {mapGetters, mapActions} from "vuex"
 
 export default {
   async mounted() {
-    await this.fetchHeroes()
+    await this.$store.dispatch("fetchHeroes")
   },
-  methods: mapActions(['fetchHeroes']),
-  computed: mapGetters(['allHeroes'])
+  methods: mapActions(["fetchHeroes"]),
+  computed: mapGetters(["allHeroes"])
 }
 </script>
 
